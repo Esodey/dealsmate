@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js && redis-cli FLUSHALL && node services/web-scraper/wss.js",
     "wss:start": "redis-cli FLUSHALL && node services/web-scraper/wss.js",
     "seed:db": "node _data/seeder.js -i",
     "clean:db": "node _data/seeder.js -d",
@@ -11,7 +11,7 @@
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|md|graphql|mdx)\"",
     "format": "npm run prettier -- --write",
     "validate": "npm run lint && npm run prettier -- --list-different",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build && redis-cli FLUSHALL && node services/web-scraper/wss.js"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "husky": {
     "hooks": {
