@@ -11,4 +11,4 @@ Tech stack:
 • React, Redux, React-Router  
 • Material UI  
 • Node.js/Express, Socket. io  
-• MongoDB/Mongoose, Redis/Bull, AWS S3  
+• MongoDB/Mongoose, Redis/Bull, AWS S3
