@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development nodemon app/server.js",
+    "start": "nodemon server.js",
     "wss:start": "redis-cli FLUSHALL && node app/services/web-scraper/wss.js",
     "seed:db": "node app/_data/seeder.js -i",
     "clean:db": "node app/_data/seeder.js -d",
     "lint": "eslint .",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|md|graphql|mdx)\"",
     "format": "npm run prettier -- --write",
-    "validate": "npm run lint && npm run prettier -- --list-different"
+    "validate": "npm run lint && npm run prettier -- --list-different",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "husky": {
     "hooks": {
@@ -53,5 +54,8 @@
     "lint-staged": "^10.0.0-1",
     "nodemon": "^1.19.4",
     "prettier": "^1.19.1"
+  },
+  "engines": {
+    "node": "12.13.1"
   }
 }
