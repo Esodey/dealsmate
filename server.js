@@ -10,10 +10,6 @@ const app = require('./app');
 
 const PORT = process.env.PORT || 3001;
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
-
 const server = app.listen(
   PORT,
   console.log(
