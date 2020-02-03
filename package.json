@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "wss:start": "redis-cli FLUSHALL && node app/services/web-scraper/wss.js",
-    "seed:db": "node app/_data/seeder.js -i",
-    "clean:db": "node app/_data/seeder.js -d",
+    "wss:start": "redis-cli FLUSHALL && node services/web-scraper/wss.js",
+    "seed:db": "node _data/seeder.js -i",
+    "clean:db": "node _data/seeder.js -d",
     "lint": "eslint .",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|md|graphql|mdx)\"",
     "format": "npm run prettier -- --write",
